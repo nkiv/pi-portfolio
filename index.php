@@ -35,7 +35,7 @@
                     <br>
                     <span class="portfolio"><a href="mailto:code@nkivett.work"><a href="mailto:code@nkivett.work"><img src="/pictures/icons8-email-96.png" alt="email me" width="20" height="20">code@nkivett.work</a></a></span>
                     <br>
-                    <span class="portfolio"><a href="../files/Noah-Kivett-Resume.pdf" Download><a href="../files/Noah-Kivett-Resume.pdf" Download><img src="/pictures/icons8-file-100.png" alt="resume" width="20" height="20">Resume</a></a></span>
+                    <span class="portfolio"><a href="/files/Noah-Kivett-Resume.pdf" Download><a href="/files/Noah-Kivett-Resume.pdf" Download><img src="/pictures/icons8-file-100.png" alt="resume" width="20" height="20">Resume</a></a></span>
                     <br>
                     <span class="portfolio"><img src="/pictures/icons8-phone-100.png" alt="call me" width="20" height="20"></a>720-708-8809</span>
                     <br>
@@ -82,7 +82,7 @@
             <a href="https://github.com/nkiv"><img src="/pictures/icons8-github-100.png" alt="github" width="30" height="30"></a>
         </td>
         <td>
-            <a href="../files/NoahKivettResume-1.pdf" Download><img src="/pictures/icons8-file-100.png" alt="resume" width="30" height="30"></a>
+            <a href="/files/NoahKivettResume-1.pdf" Download><img src="/pictures/icons8-file-100.png" alt="resume" width="30" height="30"></a>
         </td>
         <td>
             <a href="mailto:code@nkivett.work"><img src="/pictures/icons8-email-96.png" alt="email me" width="30" height="30"></a>
