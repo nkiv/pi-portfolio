@@ -92,6 +92,12 @@ if ($return_var !== 0) {
                                 <?php echo shell_exec('df -h / --output=pcent | grep "[0-9][0-9]%"');?>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="identifier">Uptime</td>
+                            <td>
+                                <?php echo shell_exec('uptime -p');?>
+                            </td>
+                        </tr>
                     </table>
                 <p>This Table is created using PHP and vcgencmd system calls.<br>The table updates statically each time the page is refreshed.<br>This is also done automatically each 60s<br>Ouputs are cleaned using grep on the vcgencmd output</p>
 
