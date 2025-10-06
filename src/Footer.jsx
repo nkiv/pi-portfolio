@@ -10,7 +10,7 @@ function Footer() {
               </a>
             </td>
             <td>
-              <a href="" Download>
+              <a href="" download>
                 <img src="" alt="resume" width="30" height="30" />
               </a>
             </td>
