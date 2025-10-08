@@ -10,7 +10,7 @@ function About() {
         <table>
           <thead>
             <td colSpan={5} className="float-top">
-              <h3 className="title">About me</h3>
+              <h3 className="title nowrap">About me</h3>
             </td>
             <td>
               <section className="right-align half-size">
@@ -31,7 +31,7 @@ function About() {
                   dedication to higher achievement with an honors STEM
                   certificate.
                 </p>
-
+                <br />
                 <p>
                   From a very young age I have been enticed with electronics.
                   The portable gaming consoles like the GameBoy Advance and the
@@ -46,19 +46,16 @@ function About() {
                   and wonder for what is next for a gamer, similar to a feeling
                   I had when exploring the world of Pokemon Fire Red as a child.
                 </p>
-
-                <p>
+                <br />
+                <p className="pad-bottom">
                   On my free time I enjoy playing games such as Counter Strike
                   2, Elden ring, The God of War series, The Yakuza Series, and
                   Stardew Valley.
                 </p>
-                <section className="right-align">
-                  <Experience />
-                </section>
 
-                <section className="right-align">
-                  <Education />
-                </section>
+                <Experience />
+
+                <Education />
 
                 <section className="right-align">
                   <Projects />

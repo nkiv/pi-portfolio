@@ -12,6 +12,10 @@ body {
   --footer-height: 4rem;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .title {
   font-family: "Lucida Console";
   font-size: 5vh;
@@ -23,13 +27,24 @@ body {
   color: deepskyblue;
   padding: 5vh 0vh 5vh 0vh;
 }
-
+.pop {
+  color: deepskyblue;
+}
 .page-nav {
   text-align: center;
   width: 100%;
   top: 0;
-  border-bottom: double white;
   background-color: black;
+}
+
+a:hover {
+  background-color: deepskyblue;
+  color: black;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
 }
 
 .right-align {
@@ -53,8 +68,18 @@ body {
   padding-top: 5vh;
 }
 
+.pad-top-large {
+  padding-top: 25vh;
+}
+
 .pad-bottom {
   padding-bottom: 5vh;
+}
+.pad-bottom-medium {
+  padding-bottom: 10vh;
+}
+.pad-bottom-large {
+  padding-bottom: 35vh;
 }
 
 table thead td {
@@ -65,13 +90,15 @@ footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-top: groove;
   position: sticky;
   bottom: 0;
-  width: 50%;
   height: 1vh;
-  background-color: grey;
-  padding-bottom: 3vh;
+  padding-top: 10vh;
+}
+
+footer table {
+  margin-left: auto;
+  margin-right: auto;
 }
 .float-top {
   vertical-align: top;

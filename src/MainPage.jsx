@@ -21,8 +21,10 @@ function MainPage() {
       </table>
 
       <section>
-        <section id="center welcome">
-          <p className="center-text pad-top title">Hello World! I am</p>
+        <section id="welcome">
+          <p className="center-text pad-top title pad-top-large">
+            Hello World! I am
+          </p>
           <p className="center-text name">Noah Kivett</p>
           <p className="center-text title">Software Developer</p>
           <br />

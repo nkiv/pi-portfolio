@@ -1,7 +1,7 @@
 function Projects() {
   return (
     <div id="projects">
-      <h2>Projects</h2>
+      <h2 className="title pop">Projects</h2>
       <ul>
         <li>
           Biscuits from Outerspace |
@@ -16,6 +16,7 @@ function Projects() {
             Registry. Created for the Brackeys GameJam hosted on Itch.io.
           </p>
         </li>
+        <br />
         <li>
           Virtual Reality Drawing |
           <a href="https://github.com/csu-hci-projects/CS465_EbertM_KivettN">
@@ -31,6 +32,7 @@ function Projects() {
             acquisition.
           </p>
         </li>
+        <br />
         <li>
           Glitch Pong |{" "}
           <a href="https://github.com/nkiv/pico-8-projects/tree/main/broken-pong">
@@ -47,6 +49,7 @@ function Projects() {
             collision and interactions without premade functions.
           </p>
         </li>
+        <br />
         <li>
           Aim Lab |{" "}
           <a href="https://github.com/nkiv/pico-8-projects/tree/main/aim-lab">
