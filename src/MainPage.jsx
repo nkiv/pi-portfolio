@@ -22,10 +22,10 @@ function MainPage() {
 
       <section>
         <section id="welcome">
-          <p className="center-text pad-top title pad-top-large">
-            Hello World! I am
-          </p>
-          <p className="center-text name">Noah Kivett</p>
+          {/* <p className="center-text pad-top title pad-top-large">
+            Hello!
+          </p> */}
+          <p className="center-text name pad-top-xlarge">Noah Kivett</p>
           <p className="center-text title">Software Developer</p>
           <br />
         </section>

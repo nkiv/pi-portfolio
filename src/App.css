@@ -72,12 +72,18 @@ a {
   padding-top: 25vh;
 }
 
+.pad-top-xlarge {
+  padding-top: 30vh;
+}
+
 .pad-bottom {
   padding-bottom: 5vh;
 }
+
 .pad-bottom-medium {
-  padding-bottom: 10vh;
+  padding-bottom: 15vh;
 }
+
 .pad-bottom-large {
   padding-bottom: 35vh;
 }
