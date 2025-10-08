@@ -1,39 +1,41 @@
-import headshot from "./assets/pictures/Noah-12.jpg";
 import "./App.css";
+import About from "./About";
+import ContactMe from "./ContactMe";
+import Experience from "./Experience";
 
 function MainPage() {
   return (
     <>
-      <img
-        className="headshot"
-        src={headshot}
-        height="390"
-        alt="picture of me"
-      />
+      <table className="page-nav center">
+        <thead>
+          <td>
+            <a href="/#about">About</a>
+          </td>
+          <td>
+            <a href="/#experience">Experience</a>
+          </td>
+          <td>
+            <a href="/#projects">Projects</a>
+          </td>
+        </thead>
+      </table>
+
       <section>
-        <p>
-          <span>Noah Kivett</span>
+        <section id="center welcome">
+          <p className="center-text pad-top title">Hello World! I am</p>
+          <p className="center-text name">Noah Kivett</p>
+          <p className="center-text title">Software Developer</p>
           <br />
-          <span>Software Developer</span>
-          <br />
-          <span>
-            <a href="https://github.com/nkiv">Github</a>
-          </span>
-          <br />
-          <span>
-            <a href="mailto:code@nkivett.work">code@nkivett.work</a>
-          </span>
-          <br />
-          <span>
-            <a href="" download>
-              Resume
-            </a>
-          </span>
-          <br />
-          <span>720-708-8809</span>
-          <br />
-          <span>Highlands Ranch, CO</span>
-        </p>
+        </section>
+        <section>
+          <table className="center">
+            <ContactMe />
+          </table>
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
       </section>
     </>
   );

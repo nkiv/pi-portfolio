@@ -19,7 +19,13 @@ function GameDetail() {
   return (
     <div>
       <h2>{gameId}</h2>
-      <iframe title={gameId} src={htmlsrc} width="75%" height="600"></iframe>
+      <iframe
+        className="game-window"
+        title={gameId}
+        src={htmlsrc}
+        width="75%"
+        height="600"
+      ></iframe>
       <script src={jssrc}></script>
     </div>
   );

@@ -5,17 +5,17 @@ function Games() {
     { id: "glitch-pong", name: "Glitch Pong" },
     { id: "aim-lab", name: "Aim Lab" },
   ];
-  return(
-    <div>
-        <h1>Games</h1>
-        <ul>
-            {games.map(g =>(
-                <li key={g.id}>
-                    <Link to={g.id}>{g.name}</Link>
-                </li>
-            ))}
-        </ul>
-        <Outlet />
+  return (
+    <div className="half-size center">
+      <h1>Games</h1>
+      <ul>
+        {games.map((g) => (
+          <li key={g.id}>
+            <Link to={g.id}>{g.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <Outlet />
     </div>
   );
 }

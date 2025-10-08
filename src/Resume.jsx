@@ -1,7 +1,7 @@
 function Resume() {
   return (
     <>
-      <section>
+      <section className="half-size center">
         <h2>Work Experience</h2>
         <ul>
           <h4>IT Support Technician</h4>
@@ -9,38 +9,33 @@ function Resume() {
             <a href="https://www.engr.colostate.edu/ets/">
               Engineering Technology Services
             </a>
-            <span>
-              Employed: October 2023 May 2025
-              IT Support & Helpdesk,
-              Student Account Management,
-              Computer Assembly &
-              System Software Deployment
+            <span className="right-align">
+              Employed: October 2023 May 2025 IT Support & Helpdesk, Student
+              Account Management, Computer Assembly & System Software Deployment
             </span>
           </li>
           <h4>Customer Service Representitive</h4>
           <li>
             <a href="https://www.microcenter.com/">Micro Center Denver</a>
-            <span>
-              Employed: August 2020 October 2020
-              Cashier, Product Sales, Computer &
-              Systems information
+            <span className="right-align">
+              Employed: August 2020 October 2020 Cashier, Product Sales,
+              Computer & Systems information
             </span>
           </li>
           <h4>Tire Technician</h4>
           <li>
             <a href="https://www.discounttire.com/">Discount Tire</a>
-            <span>
-              Employed: October 2020 June 2021
-              Tire Repair, Installation, Maintenance,
-              Working With a Smile, All weather condition
+            <span className="right-align">
+              Employed: October 2020 June 2021 Tire Repair, Installation,
+              Maintenance, Working With a Smile, All weather condition
             </span>
           </li>
           <h4>Sales Associate</h4>
           <li>
             <a href="https://www.pioneerco.com/">Pioneer Landscape Center</a>
-            <span>
-              Employed: May 2022 October 2022
-              Yard Labor, Customer Service, Product Quota
+            <span className="right-align">
+              Employed: May 2022 October 2022 Yard Labor, Customer Service,
+              Product Quota
             </span>
           </li>
         </ul>
@@ -49,23 +44,12 @@ function Resume() {
           <ul>
             <li>
               <a href="https://www.colostate.edu/">Colorado State University</a>
-              <span>
-                Bachelors Degree
-                Area of Study: Computer Science
+              <span className="right-align">
+                Bachelors Degree Area of Study: Computer Science
               </span>
             </li>
           </ul>
           <ul>
-            {" "}
-            HIGHSCHOOL EXPERIENCE
-            <li>
-              <a href="https://mvhs.dcsdk12.org/">Mountain Vista High</a>
-              <span>
-                {" "}
-                Graduated: 2021
-                <span>GPA: 3.75</span>
-              </span>
-            </li>
             <ul>
               <li>Honors Cetificate in Stem</li>
             </ul>
@@ -75,14 +59,14 @@ function Resume() {
           <h2>Projects</h2>
           <ul>
             <li>
-              Biscuits from Outerspace |{" "}
+              Biscuits from Outerspace |
               <a href="https://github.com/nkiv/Biscuits-from-Outerspace">
                 Github
-              </a>{" "}
-              |{" "}
+              </a>
+              |
               <a href="https://nkiv.itch.io/biscuits-from-outerspace">
                 Itch.io
-              </a>{" "}
+              </a>
               | #1681 | <a href="">Play Me!</a>
               <p>
                 My first game I created start to finish. Written using the
@@ -94,7 +78,7 @@ function Resume() {
               </p>
             </li>
             <li>
-              Virtual Reality Drawing |{" "}
+              Virtual Reality Drawing |
               <a href="https://github.com/csu-hci-projects/CS465_EbertM_KivettN">
                 Github
               </a>
