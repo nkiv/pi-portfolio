@@ -14,7 +14,7 @@ function Resume() {
               Account Management, Computer Assembly & System Software Deployment
             </span>
           </li>
-          <h4>Customer Service Representitive</h4>
+          <h4>Customer Service Representative</h4>
           <li>
             <a href="https://www.microcenter.com/">Micro Center Denver</a>
             <span className="right-align">
