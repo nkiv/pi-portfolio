@@ -9,11 +9,12 @@ function Projects() {
           | <a href="https://nkiv.itch.io/biscuits-from-outerspace">Itch.io</a>{" "}
           | #1681
           <p>
-            My first game I created start to finish. Written using the Phaser.js
-            platform. I gained extensive knowledge about how sprites work,
-            camera movement, player movement, item creation, player collision,
-            scene switching, and passing information between scenes with the
-            Registry. Created for the Brackeys GameJam hosted on Itch.io.
+            <span className="terminal">~$</span>
+            {"\t"}
+            Demonstrated my ability to learn and use a new framework. Created a
+            prototype with limited time using manuals and tutorials.
+            Strengthened proficiency in Javascript and Game Development.
+            Submission was judged by peer game developers.
           </p>
         </li>
         <br />
@@ -23,13 +24,14 @@ function Projects() {
             Github
           </a>
           <p>
-            A VR design project that allows the user to switch between two
-            different drawing styles. It was used to experiment whether
-            participants are more comfortable with drawing using 2-D or 3-D
-            spaces in VR. Learned how to create and set up levels in UE5, add
-            plugins for the Meta Quest headsets, teleportation in VR, drawing on
-            surfaces in VR, spawning objects in VR, and casting rays for target
-            acquisition.
+            <span className="terminal">~$</span>
+            {"\t"}A VR project that allows the user to test two different
+            drawing styles. It was used to experiment whether participants are
+            more comfortable with drawing using 2D or 3D spaces in VR. Gained
+            experience in designing levels in UE5, troubleshooting compatiblity,
+            importing and using plugins, player movement, ray casting combined
+            with detection for 2d drawing, creating and destrying objects from
+            events, and coding/debugging Blueprint Graphs.
           </p>
         </li>
         <br />
@@ -40,12 +42,13 @@ function Projects() {
           </a>{" "}
           | <a href="https://nkiv.itch.io/glitch-pong">Itch.io</a> |
           <p>
-            My first pico-8 project that I submitted to the Patch Notes game
-            Jam. It is a simple pong game that I initially made to mess around
-            with a particle system. I added intentional bugs to fit the theme of
-            the game Jam. This project increased my knowledge about particle
-            systems, player movement, npc movement, player and npc bounding, and
-            collision and interactions without premade functions.
+            <span className="terminal">~$</span>
+            {"\t"}
+            Demonstrated ability to create a prototype in a new programming
+            language with a time constraint. Pong style game with intentional
+            bugs (jam theme). Created a particle system for the ball. Learned
+            basic collision detection for different object types without
+            pre-made methods.
           </p>
         </li>
         <br />
@@ -56,12 +59,11 @@ function Projects() {
           </a>{" "}
           | <a href="https://nkiv.itch.io/aim-lab">Itch.io</a> |
           <p>
-            A game I created in pico8. It mimics a game I would play in my free
-            time during high school. Its simply random targets spawning on the
-            screen. Click the targets to gain a score. This project help
-            solidify scene switching for me in pico8. Its also a very different
-            game for pico8 because it uses the memory address for the mouse as
-            well as its inputs
+            <span className="terminal">~$</span>
+            {"\t"}
+            Uses memory addresses to discern the position of the mouse. Side
+            project for solidifying my PICO-8 game loop knowlege. Uses scene
+            switching, time, as well as memory passing between scenes.
           </p>
         </li>
       </ul>

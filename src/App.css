@@ -11,7 +11,9 @@ body {
 .tab {
   text-indent: 5vh;
 }
-
+.terminal{
+  color: goldenrod;
+}
 .bold {
   font-weight: bold;
 }
