@@ -51,7 +51,7 @@ function Resume() {
           </ul>
           <ul>
             <ul>
-              <li>Honors Cetificate in Stem</li>
+              <li>Honors Certificate in Stem</li>
             </ul>
           </ul>
         </div>
