@@ -9,4 +9,4 @@
 
 ### The website is also getting a CSS revamp and hopefully is much more polished to give me an edge over others looking for a software job
 
-### The react branch is being merged, once I get back to the server I can update the live website.
+### The react branch is being merged, once I get back to the server I can update the live website. (CoPilot Provides spell correction)
