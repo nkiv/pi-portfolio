@@ -62,7 +62,7 @@ function Projects() {
             <span className="terminal">~$</span>
             {"\t"}
             Uses memory addresses to discern the position of the mouse. Side
-            project for solidifying my PICO-8 game loop knowlege. Uses scene
+            project for solidifying my PICO-8 game loop knowledge. Uses scene
             switching, time, as well as memory passing between scenes.
           </p>
         </li>
