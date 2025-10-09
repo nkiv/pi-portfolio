@@ -14,43 +14,23 @@ function About() {
             </td>
             <td>
               <section className="right-align half-size">
-                <p>
-                  I was born and raised in Southern Colorado and while growing
-                  up at home I learned how to be a leader participating in
-                  sports. For a decade I played hockey as a goalie, guarding the
-                  net and shouting callouts to my teammates on the ice. I
-                  learned how to win and lose playing hockey which provided me
-                  with the precious skill of controlling my emotions. This skill
-                  became polished later in my sporting career when I started
-                  shooting archery. Archery is a highly disciplined sport. To
-                  perform well I mastered controlling my body fully;
-                  emotionally, physically, and mentally. And after a few years
-                  of shooting, I became a Level 1 Certified Coach. While I do
-                  not currently coach due to college, I was a private coach with
-                  a small team. In high school, I was commended for my
-                  dedication to higher achievement with an honors STEM
-                  certificate.
+                <p className="text-medium tab">
+                  I have been coding for over a decade, starting in a middle
+                  school coding club where we made games in Xcode. In high
+                  school I learned Java and cracked coding challenges on{" "}
+                  <a href="codingbat.com">codingbat.com</a>. I went on to major
+                  in Computer Science, gaining exposure to a wide range of
+                  languages and paradigms such as Python, JavaScript, Scala. As
+                  well as learning core topics like algorithms, distributed
+                  systems, and programming language development.
                 </p>
-                <br />
-                <p>
-                  From a very young age I have been enticed with electronics.
-                  The portable gaming consoles like the GameBoy Advance and the
-                  DS systems sparked a love for gaming and electronics that has
-                  stuck with me. I spent my time in college honing my
-                  programming skills as well as learning about different
-                  programming paradigms. Throughout my experiences in college I
-                  have always felt the want to create something new and
-                  exciting, but I always fumble trying to find the precise spot
-                  where creativity and programming logic overlap to mold
-                  something special. I want to create that feeling of excitement
-                  and wonder for what is next for a gamer, similar to a feeling
-                  I had when exploring the world of Pokemon Fire Red as a child.
-                </p>
-                <br />
-                <p className="pad-bottom">
-                  On my free time I enjoy playing games such as Counter Strike
-                  2, Elden ring, The God of War series, The Yakuza Series, and
-                  Stardew Valley.
+                <p className="text-medium pad-bottom tab">
+                  For the past year post-grad I have focused on learning React
+                  and Node to build web applications that are fast, scalable,
+                  and user friendly. When I am not exploring new coding
+                  concepts, I am tinkering with servers on Raspberry Pi or
+                  experimenting with game development using Phaser.js and
+                  Pico‑8.
                 </p>
 
                 <Experience />

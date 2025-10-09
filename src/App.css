@@ -8,6 +8,22 @@ body {
   background-color: black;
 }
 
+.tab {
+  text-indent: 5vh;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-large {
+  font-size: 4vh;
+}
+
+.text-medium {
+  font-size: 3vh;
+}
+
 :root {
   --footer-height: 4rem;
 }

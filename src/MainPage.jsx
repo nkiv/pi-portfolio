@@ -9,13 +9,19 @@ function MainPage() {
       <table className="page-nav center">
         <thead>
           <td>
-            <a href="/#about">About</a>
+            <a className="text-large" href="/#about">
+              About
+            </a>
           </td>
           <td>
-            <a href="/#experience">Experience</a>
+            <a className="text-large" href="/#experience">
+              Experience
+            </a>
           </td>
           <td>
-            <a href="/#projects">Projects</a>
+            <a className="text-large" href="/#projects">
+              Projects
+            </a>
           </td>
         </thead>
       </table>

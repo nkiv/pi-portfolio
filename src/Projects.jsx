@@ -2,12 +2,12 @@ function Projects() {
   return (
     <div id="projects">
       <h2 className="title pop">Projects</h2>
-      <ul>
+      <ul className="text-medium">
         <li>
-          Biscuits from Outerspace |
-          <a href="https://github.com/nkiv/Biscuits-from-Outerspace">Github</a>|
-          <a href="https://nkiv.itch.io/biscuits-from-outerspace">Itch.io</a>|
-          #1681 | <a href="">Play Me!</a>
+          <span className="bold">Biscuits from Outerspace</span> |{" "}
+          <a href="https://github.com/nkiv/Biscuits-from-Outerspace">Github</a>{" "}
+          | <a href="https://nkiv.itch.io/biscuits-from-outerspace">Itch.io</a>{" "}
+          | #1681
           <p>
             My first game I created start to finish. Written using the Phaser.js
             platform. I gained extensive knowledge about how sprites work,
@@ -18,7 +18,7 @@ function Projects() {
         </li>
         <br />
         <li>
-          Virtual Reality Drawing |
+          <span className="bold">Virtual Reality Drawing</span> |{" "}
           <a href="https://github.com/csu-hci-projects/CS465_EbertM_KivettN">
             Github
           </a>
@@ -34,12 +34,11 @@ function Projects() {
         </li>
         <br />
         <li>
-          Glitch Pong |{" "}
+          <span className="bold">Glitch Pong</span> |{" "}
           <a href="https://github.com/nkiv/pico-8-projects/tree/main/broken-pong">
             Github
           </a>{" "}
-          | <a href="https://nkiv.itch.io/glitch-pong">Itch.io</a> |{" "}
-          <a href="">Play Me!</a>
+          | <a href="https://nkiv.itch.io/glitch-pong">Itch.io</a> |
           <p>
             My first pico-8 project that I submitted to the Patch Notes game
             Jam. It is a simple pong game that I initially made to mess around
@@ -51,12 +50,11 @@ function Projects() {
         </li>
         <br />
         <li>
-          Aim Lab |{" "}
+          <span className="bold">Aim Lab</span> |{" "}
           <a href="https://github.com/nkiv/pico-8-projects/tree/main/aim-lab">
             Github
           </a>{" "}
-          | <a href="https://nkiv.itch.io/aim-lab">Itch.io</a> |{" "}
-          <a href="">Play Me!</a>
+          | <a href="https://nkiv.itch.io/aim-lab">Itch.io</a> |
           <p>
             A game I created in pico8. It mimics a game I would play in my free
             time during high school. Its simply random targets spawning on the
