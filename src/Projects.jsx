@@ -30,7 +30,7 @@ function Projects() {
             more comfortable with drawing using 2D or 3D spaces in VR. Gained
             experience in designing levels in UE5, troubleshooting compatiblity,
             importing and using plugins, player movement, ray casting combined
-            with detection for 2d drawing, creating and destrying objects from
+            with detection for 2d drawing, creating and destroying objects from
             events, and coding/debugging Blueprint Graphs.
           </p>
         </li>
