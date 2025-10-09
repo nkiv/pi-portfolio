@@ -28,7 +28,7 @@ function Projects() {
             {"\t"}A VR project that allows the user to test two different
             drawing styles. It was used to experiment whether participants are
             more comfortable with drawing using 2D or 3D spaces in VR. Gained
-            experience in designing levels in UE5, troubleshooting compatiblity,
+            experience in designing levels in UE5, troubleshooting compatibility,
             importing and using plugins, player movement, ray casting combined
             with detection for 2d drawing, creating and destroying objects from
             events, and coding/debugging Blueprint Graphs.
