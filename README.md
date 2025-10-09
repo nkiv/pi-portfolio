@@ -1,3 +1,4 @@
+
 # Welcome to my portfolio
 
 ### This website began as a CS project, I then wanted to serve it to the web and have been building upon it ever since. It is served to the web using Cloudflare tunnels and Apache.
@@ -6,4 +7,6 @@
 
 ### The new react branch is being built up to replace the current and slow loading php webserver with a react.js webserver. Its currently in its skeleton phase as I translate the html into jsx.
 
-### The website is also getting a CSS revamp and hopefully is much more polished to give me an edge over others looking for a software job.
+### The website is also getting a CSS revamp and hopefully is much more polished to give me an edge over others looking for a software job
+
+### The react branch is being merged, once I get back to the server I can update the live website.
