@@ -82,6 +82,10 @@ a {
   width: 50%;
 }
 
+.three-quarter-size{
+  width: 75%;
+}
+
 .pad-top {
   padding-top: 5vh;
 }

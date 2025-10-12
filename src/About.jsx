@@ -13,7 +13,7 @@ function About() {
               <h3 className="title nowrap">About me</h3>
             </td>
             <td>
-              <section className="right-align half-size">
+              <section className="right-align three-quarter-size">
                 <p className="text-medium tab">
                   I have been coding for over a decade, starting in a middle
                   school coding club where we made games in Xcode. In high
