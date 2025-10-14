@@ -46,7 +46,7 @@ function ContactMe() {
             </a>
           </td>
           <td>
-            <a href="../public/files/Noah-Kivett-Resume.pdf" download>
+            <a href="/files/Noah-Kivett-Resume.pdf" download>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
