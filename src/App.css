@@ -131,3 +131,145 @@ footer table {
 .float-top {
   vertical-align: top;
 }
+
+/* Mobile-responsive styles */
+@media (max-width: 768px) {
+  /* Adjust text sizes for better mobile readability */
+  .name {
+    font-size: 8vw; /* Changed from 10vh to responsive width-based */
+    padding: 2rem 1rem; /* Changed from 5vh to rem units */
+  }
+
+  .title {
+    font-size: 6vw; /* Changed from 5vh to responsive width-based */
+  }
+
+  .text-large {
+    font-size: 5vw; /* Changed from 4vh to responsive width-based */
+  }
+
+  .text-medium {
+    font-size: 4.5vw; /* Changed from 3vh to responsive width-based */
+  }
+
+  /* Reduce excessive padding on mobile */
+  .pad-top-xlarge {
+    padding-top: 10vh; /* Reduced from 30vh */
+  }
+
+  .pad-top-large {
+    padding-top: 8vh; /* Reduced from 25vh */
+  }
+
+  .pad-top {
+    padding-top: 2vh; /* Reduced from 5vh */
+  }
+
+  .pad-bottom-large {
+    padding-bottom: 10vh; /* Reduced from 35vh */
+  }
+
+  .pad-bottom-medium {
+    padding-bottom: 8vh; /* Reduced from 15vh */
+  }
+
+  .pad-bottom {
+    padding-bottom: 2vh; /* Reduced from 5vh */
+  }
+
+  /* Make navigation more mobile-friendly */
+  .page-nav table {
+    width: 100%;
+  }
+
+  .page-nav thead td {
+    padding: 0.5rem 0.75rem; /* Reduced horizontal padding for mobile */
+  }
+
+  /* Reduce padding in table headers generally */
+  table thead td {
+    padding: 0.5rem 1rem; /* Reduced from 0vh 5vh */
+  }
+
+  /* Make content tables in About section more responsive - but NOT ContactMe */
+  #about table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+
+  #about table thead {
+    display: block;
+  }
+
+  #about table thead td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Keep ContactMe and Footer links horizontal (override the block display rules) */
+  .pad-top-large.pad-bottom-medium,
+  footer {
+    display: block;
+  }
+
+  .pad-top-large.pad-bottom-medium table,
+  footer table {
+    display: table !important;
+    width: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pad-top-large.pad-bottom-medium table thead,
+  footer table thead {
+    display: table-header-group !important;
+  }
+
+  .pad-top-large.pad-bottom-medium table thead tr,
+  footer table thead tr {
+    display: table-row !important;
+  }
+
+  .pad-top-large.pad-bottom-medium table thead tr td,
+  footer table thead tr td {
+    display: table-cell !important;
+    width: auto !important;
+    padding: 0 0.75rem !important;
+  }
+
+  /* Adjust widths for mobile */
+  .half-size {
+    width: 90%;
+  }
+
+  .three-quarter-size {
+    width: 95%;
+  }
+
+  /* Remove float on mobile as it breaks layout */
+  .right-align {
+    float: none;
+    text-align: left;
+  }
+
+  /* Adjust tab indent for smaller screens */
+  .tab {
+    text-indent: 2rem; /* Reduced from 5vh */
+  }
+
+  /* Make footer more compact on mobile */
+  footer {
+    padding-top: 5vh; /* Reduced from 10vh */
+  }
+
+  footer table thead tr td {
+    padding: 0 1rem; /* Add some spacing between icons */
+  }
+
+  /* Adjust contact icons table for mobile */
+  .pad-top-large.pad-bottom-medium {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+}

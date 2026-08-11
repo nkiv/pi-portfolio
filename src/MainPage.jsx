@@ -19,6 +19,11 @@ function MainPage() {
             </a>
           </td>
           <td>
+            <a className="text-large" href="/#education">
+              Education
+            </a>
+          </td>
+          <td>
             <a className="text-large" href="/#projects">
               Projects
             </a>
