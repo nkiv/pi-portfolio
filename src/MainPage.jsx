@@ -4,27 +4,41 @@ import ContactMe from "./ContactMe";
 import Experience from "./Experience";
 
 function MainPage() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 100; // Offset in pixels from top
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       <table className="page-nav center">
         <thead>
           <td>
-            <a className="text-large" href="/#about">
+            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
               About
             </a>
           </td>
           <td>
-            <a className="text-large" href="/#experience">
+            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>
               Experience
             </a>
           </td>
           <td>
-            <a className="text-large" href="/#education">
+            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}>
               Education
             </a>
           </td>
           <td>
-            <a className="text-large" href="/#projects">
+            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
               Projects
             </a>
           </td>

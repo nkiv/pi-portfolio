@@ -5,14 +5,66 @@
   box-sizing: border-box;
 }
 
-html, body {
+/* Prevent any section or div from creating its own scrollbar */
+section, div {
+  overflow: visible;
+}
+
+table {
+  overflow: visible;
+}
+
+html {
   overflow-x: hidden;
+  overflow-y: scroll; /* Only html element scrolls */
   width: 100%;
   background-color: black;
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
   background-color: black;
+  overflow: hidden; /* Prevent body from scrolling */
+  width: 100%;
+  min-height: 100vh; /* Allow body to grow beyond viewport */
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh; /* Allow root to grow beyond viewport */
+  overflow: visible; /* No scrollbar on root */
+  padding-top: 2vh; /* Add top padding to prevent clipping */
+  padding-bottom: 2vh; /* Add bottom padding for consistency */
+}
+
+/* About component container - no overflow scroll */
+.about-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.about-section {
+  width: 100%;
+  padding: 2vh 5vw;
+  margin-bottom: 3vh;
+  overflow: visible;
+}
+
+.section-header {
+  margin-bottom: 2vh;
+}
+
+.section-content {
+  width: 100%;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: 0;
+  overflow: visible;
 }
 
 .tab {
@@ -193,36 +245,17 @@ footer table {
     padding: 0.5rem 0.75rem; /* Reduced horizontal padding for mobile */
   }
 
-  /* Reduce padding in table headers generally */
-  table thead td {
-    padding: 0.5rem 1rem; /* Reduced from 0vh 5vh */
+  /* Mobile-specific About section styles */
+  .about-section {
+    padding: 2vh 3vw; /* Reduced horizontal padding for mobile */
   }
 
-  /* Make content tables in About section more responsive - but NOT ContactMe */
-  #about table {
+  .section-content {
+    max-width: 100%; /* Full width on mobile */
     width: 100%;
-    display: block;
-    overflow-x: auto;
   }
 
-  #about table thead {
-    display: block;
-  }
-
-  #about table thead td {
-    display: block;
-    width: 100%;
-    padding: 0.5rem !important;
-  }
-
-  /* Ensure sections inside table cells are constrained */
-  #about section {
-    width: 100% !important;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Keep ContactMe and Footer links horizontal (override the block display rules) */
+  /* Keep ContactMe and Footer links horizontal */
   .pad-top-large.pad-bottom-medium,
   footer {
     display: block;
