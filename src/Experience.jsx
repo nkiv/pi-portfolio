@@ -8,7 +8,7 @@ function Experience() {
         <span className="text-large ">Engineering Technology Services</span>
       </a>
       <span className="right-align pad-bottom text-medium">
-        Employed: <span className="right-align">October 2023 to May 2025</span>{" "}
+        Employed: October 2023 to May 2025{" "}
         <br /> <br /> IT Support & Helpdesk, Student Account Management, Computer
         Assembly & System Software Deployment
       </span>

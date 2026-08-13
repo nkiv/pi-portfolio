@@ -212,6 +212,14 @@ footer table {
   #about table thead td {
     display: block;
     width: 100%;
+    padding: 0.5rem !important;
+  }
+
+  /* Ensure sections inside table cells are constrained */
+  #about section {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Keep ContactMe and Footer links horizontal (override the block display rules) */
@@ -258,6 +266,28 @@ footer table {
   .right-align {
     float: none;
     text-align: left;
+  }
+
+  /* Ensure nowrap doesn't cause overflow on mobile */
+  .nowrap {
+    white-space: normal;
+  }
+
+  /* Ensure links can wrap on mobile */
+  a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Prevent lists from overflowing */
+  ul {
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+  }
+
+  ul li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   /* Adjust tab indent for smaller screens */

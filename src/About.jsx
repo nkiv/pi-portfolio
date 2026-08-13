@@ -35,7 +35,7 @@ function About() {
               </section>
             </td>
           </thead>
-          <thead>
+          <thead id="experience">
             <td colSpan={5} className="float-top">
               <h2 className="title">Experience</h2>
             </td>
@@ -45,11 +45,11 @@ function About() {
                 <a href="https://www.engr.colostate.edu/ets/">
                   <span className="text-large ">Engineering Technology Services</span>
                 </a>
-                <span className="right-align pad-bottom text-medium">
-                  Employed: <span className="right-align">October 2023 to May 2025</span>{" "}
+                <p className="pad-bottom text-medium">
+                  <span className="right-align">Employed: October 2023 to May 2025</span>
                   <br /> <br /> IT Support & Helpdesk, Student Account Management, Computer
                   Assembly & System Software Deployment
-                </span>
+                </p>
               </section>
             </td>
           </thead>
@@ -69,7 +69,7 @@ function About() {
               </section>
             </td>
           </thead>
-          <thead>
+          <thead id="projects">
             <td colSpan={5} className="float-top">
               <h2 className="title">Projects</h2>
             </td>
