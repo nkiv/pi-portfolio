@@ -1,6 +1,6 @@
 function ContactMe() {
   return (
-    <table className="pad-top-large pad-bottom-medium">
+    <table className="contact-links pad-top-large pad-bottom-medium">
       <thead>
         <tr>
           <td>
