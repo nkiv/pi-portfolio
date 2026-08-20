@@ -4,7 +4,7 @@ function ContactMe() {
       <thead>
         <tr>
           <td>
-            <a href="https://github.com/nkiv">
+            <a target="_blank" href="https://github.com/nkiv">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -18,7 +18,7 @@ function ContactMe() {
             </a>
           </td>
           <td>
-            <a href="https://www.linkedin.com/in/nkiv/">
+            <a target="_blank" href="https://www.linkedin.com/in/nkiv/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -46,10 +46,7 @@ function ContactMe() {
             </a>
           </td>
           <td>
-            <a
-              href="https://github.com/nkiv/nkiv/blob/main/resume/Noah-Kivett.pdf"
-              download
-            >
+            <a target="_blank" href="https://github.com/nkiv/nkiv/blob/main/resume/Noah-Kivett.pdf">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
