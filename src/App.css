@@ -9,7 +9,8 @@
   --prompt: goldenrod;
   --mono: "Lucida Console", "Cascadia Mono", Consolas, monospace;
   --sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
-  --width: 700px;
+  /* rem, so the column grows with the type and line length stays constant */
+  --width: 43.75rem;
 }
 
 * {
@@ -19,9 +20,14 @@
 }
 
 html {
+  /* The only type-scale lever: everything else here is sized in rem. 16px up to
+     ~1437px, ramping to a 22px cap at ~2557px. The cap keeps low-DPI ultrawides
+     from overshooting, since vw cannot see pixel density. Keep the bounds in rem
+     so a user's larger browser default scales the whole curve. */
+  font-size: clamp(1rem, 0.52rem + 0.535vw, 1.375rem);
   background: var(--bg);
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 4.5rem;
   overflow-x: hidden;
 }
 
@@ -75,7 +81,6 @@ ul {
   padding: 0 1.5rem;
 }
 
-/* Navigation */
 .page-nav {
   position: sticky;
   top: 0;
@@ -114,8 +119,9 @@ ul {
 
 /* Name and title fill the first screen; stack and location sit at its bottom edge */
 .hero-intro {
-  min-height: calc(100vh - 60px);
-  min-height: calc(100svh - 60px);
+  /* 3.75rem ≈ nav height, in rem so it tracks the nav as the root scales */
+  min-height: calc(100vh - 3.75rem);
+  min-height: calc(100svh - 3.75rem);
   display: flex;
   flex-direction: column;
 }
@@ -190,8 +196,8 @@ ul {
 }
 
 .icon-link svg {
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 }
 
 .icon-link:hover {
@@ -316,7 +322,6 @@ h3 {
   padding-bottom: 1rem;
 }
 
-/* Bullets */
 .bullets {
   display: grid;
   gap: 0.5rem;
@@ -336,13 +341,12 @@ h3 {
   position: absolute;
   left: 0;
   top: 0.75em;
-  width: 4px;
-  height: 4px;
+  width: 0.25rem;
+  height: 0.25rem;
   border-radius: 50%;
   background: var(--muted);
 }
 
-/* Projects */
 .project {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -402,7 +406,6 @@ h3 {
   text-align: right;
 }
 
-/* Skills */
 .skills {
   display: grid;
   gap: 0.9rem;
@@ -419,7 +422,6 @@ h3 {
   font-size: 0.925rem;
 }
 
-/* Footer */
 footer.wrap {
   margin-top: 6rem;
   padding-top: 2rem;
@@ -469,7 +471,6 @@ footer .links {
     gap: 0;
   }
 
-  /* Phone order: title, org, then dates and place on one line */
   .role {
     grid-template-columns: auto 1fr;
     grid-template-areas:
@@ -493,7 +494,6 @@ footer .links {
     display: none;
   }
 
-  /* Phone order: name, tech, text, then links */
   .project {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -507,7 +507,7 @@ footer .links {
     margin-top: 0.6rem;
   }
 
-  /* Three stats stay on one row */
+  /* Grid, not flex-wrap, so the three stats stay on one row */
   .highlights {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -545,6 +545,18 @@ footer .links {
   }
 }
 
+/* TV: reports a 1920x1080 CSS viewport at 1x even on a 4K panel, so width alone
+   cannot tell it from a 1080p monitor. Pointer type is the only usable signal,
+   and only as a heuristic -- a large touchscreen all-in-one matches too. 28px
+   suits a ten-foot viewing distance. Must stay after the base `html` rule, since
+   media queries add no specificity. */
+@media (min-width: 1800px) and (pointer: coarse),
+  (min-width: 1800px) and (pointer: none) {
+  html {
+    font-size: 1.75rem;
+  }
+}
+
 /* Edge line drawings (desktop only) */
 .edge-art {
   display: none;
@@ -552,6 +564,11 @@ footer .links {
 
 @media (min-width: 1100px) {
   .edge-art {
+    /* viewBox is 240x900 fitted with `meet`, so the drawing's rendered width is
+       pinned by its height. Deriving the box from that is what lets the art
+       scale instead of stopping at a fixed cap. */
+    --edge-height: 92vh;
+    --edge-width: calc(var(--edge-height) * 240 / 900);
     display: block;
     position: fixed;
     inset: 0;
@@ -563,22 +580,23 @@ footer .links {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: min(260px, calc((100vw - var(--width)) / 2 - 48px));
+    /* second term is an overlap guard for narrow windows near the 1100px cutoff */
+    width: min(var(--edge-width), calc((100vw - var(--width)) / 2 - 3rem));
     display: flex;
     align-items: center;
   }
 
   .edge svg {
     width: 100%;
-    height: 92vh;
+    height: var(--edge-height);
   }
 
   .edge-left {
-    left: 24px;
+    left: 1.5rem;
   }
 
   .edge-right {
-    right: 24px;
+    right: 1.5rem;
     transform: scaleX(-1);
   }
 
