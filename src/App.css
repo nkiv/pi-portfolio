@@ -20,11 +20,12 @@
 }
 
 html {
-  /* The only type-scale lever: everything else here is sized in rem. 16px to
-     ~1024px, ramping to a 22px cap at 2560px. Anchored low because Retina Macs
-     report half their physical resolution (a 14" MBP is 1512 CSS px). Keep the
-     bounds in rem so a user's larger browser default scales the curve. */
-  font-size: clamp(1rem, 0.75rem + 0.39vw, 1.375rem);
+  /* The only type-scale lever: everything else here is sized in rem. Anchored to
+     22px at 1512px, a 14" MBP, since Retina Macs report half their physical
+     resolution and land low on any vw curve. 16px floor below ~600px for phones,
+     24px cap from ~1817px. Keep the bounds in rem so a user's larger browser
+     default scales the curve. */
+  font-size: clamp(1rem, 0.753rem + 0.658vw, 1.5rem);
   background: var(--bg);
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
@@ -253,11 +254,20 @@ h3 {
   font-weight: 600;
 }
 
+/* Wraps instead of overflowing: if the label and its right-aligned value do not
+   both fit, the value drops to its own line rather than spilling past the
+   column edge and colliding with the text beside it. */
 .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.25rem 1rem;
+}
+
+.row > :first-child {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .row > span {
@@ -525,12 +535,17 @@ footer .links {
     height: var(--edge-height);
   }
 
+  /* Anchored to the content column, not the screen edge. The drawing is
+     height-limited, so on wide screens it cannot fill the gutter; anchoring here
+     puts the leftover space on the outside instead of as a gap against the text.
+     The traces enter at the viewBox's max-x edge, which xMaxYMid holds against
+     the column. */
   .edge-left {
-    left: 1.5rem;
+    right: calc(50% + var(--width) / 2 + 1.5rem);
   }
 
   .edge-right {
-    right: 1.5rem;
+    left: calc(50% + var(--width) / 2 + 1.5rem);
     transform: scaleX(-1);
   }
 
