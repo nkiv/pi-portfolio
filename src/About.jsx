@@ -31,7 +31,6 @@ const charterGroups = [
       "Moved legacy tests over to modern Spring Boot patterns",
       "Wrote statistical distribution tests with a configurable tolerance",
       "Fixed a circuit breaker that could never open because a new one was created on every request.",
-      "Moved a service pipeline off static cloud credentials and onto short-lived, role-based AWS credentials",
       "Modernized 10+ services: Java 11 to 21, Spring Boot 2.7 to 3.x, and Spring Data for Cassandra and reactive Redis",
     ],
   },
@@ -159,13 +158,17 @@ function ExternalLink({ href, children }) {
 function Role({ title, org, orgHref, team, dates, place }) {
   return (
     <div className="role">
-      <h3 className="role-title">{title}</h3>
-      <span className="role-dates muted small">{dates}</span>
-      <p className="role-org muted">
-        <ExternalLink href={orgHref}>{org}</ExternalLink>
-        {team && ` · ${team}`}
-      </p>
-      <span className="role-place muted small">{place}</span>
+      <div className="row">
+        <h3>{title}</h3>
+        <span className="muted small">{dates}</span>
+      </div>
+      <div className="row">
+        <p className="muted">
+          <ExternalLink href={orgHref}>{org}</ExternalLink>
+          {team && ` · ${team}`}
+        </p>
+        <span className="muted small">{place}</span>
+      </div>
     </div>
   );
 }
@@ -256,15 +259,17 @@ function About() {
       <Section id="projects" title="projects">
         {projects.map((p) => (
           <article className="entry project" key={p.name}>
-            <h3 className="project-name">{p.name}</h3>
-            <span className="project-links small">
-              {p.links.map((l) => (
-                <ExternalLink key={l.href} href={l.href}>
-                  {l.label}
-                </ExternalLink>
-              ))}
-            </span>
-            <p className="project-tech muted small">
+            <div className="row">
+              <h3>{p.name}</h3>
+              <span className="project-links small">
+                {p.links.map((l) => (
+                  <ExternalLink key={l.href} href={l.href}>
+                    {l.label}
+                  </ExternalLink>
+                ))}
+              </span>
+            </div>
+            <p className="muted small">
               {p.tech}
               {p.date && ` · ${p.date}`}
             </p>
