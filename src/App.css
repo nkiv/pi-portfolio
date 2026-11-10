@@ -1,546 +1,632 @@
+/* Minimal dark theme: one accent (deepskyblue), goldenrod prompt on headings only */
+:root {
+  --bg: #0a0a0a;
+  --text: #d9d9d9;
+  --strong: #f2f2f2;
+  --muted: #8b8b8b;
+  --line: #1e1e1e;
+  --accent: #00bfff;
+  --prompt: goldenrod;
+  --mono: "Lucida Console", "Cascadia Mono", Consolas, monospace;
+  --sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --width: 700px;
+}
+
 * {
-  color: white;
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
-}
-
-/* Prevent any section or div from creating its own scrollbar */
-section, div {
-  overflow: visible;
-}
-
-table {
-  overflow: visible;
+  margin: 0;
+  padding: 0;
 }
 
 html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
   overflow-x: hidden;
-  overflow-y: scroll; /* Only html element scrolls */
-  width: 100%;
-  background-color: black;
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
-  background-color: black;
-  overflow: hidden; /* Prevent body from scrolling */
-  width: 100%;
-  min-height: 100vh; /* Allow body to grow beyond viewport */
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  width: 100%;
-  min-height: 100vh; /* Allow root to grow beyond viewport */
-  overflow: visible; /* No scrollbar on root */
-  padding-top: 2vh; /* Add top padding to prevent clipping */
-  padding-bottom: 2vh; /* Add bottom padding for consistency */
-}
-
-/* About component container - no overflow scroll */
-.about-container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-}
-
-.about-section {
-  width: 100%;
-  padding: 2vh 5vw;
-  margin-bottom: 3vh;
-  overflow: visible;
-}
-
-.section-header {
-  margin-bottom: 2vh;
-}
-
-.section-content {
-  width: 100%;
-  max-width: 75%;
-  margin-left: auto;
-  margin-right: 0;
-  overflow: visible;
-}
-
-.tab {
-  text-indent: 5vh;
-}
-.terminal{
-  color: goldenrod;
-}
-.bold {
-  font-weight: bold;
-}
-
-.text-large {
-  font-size: 4vh;
-}
-
-.text-medium {
-  font-size: 3vh;
-}
-
-:root {
-  --footer-height: 4rem;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.title {
-  font-family: "Lucida Console";
-  font-size: 5vh;
-}
-.name {
-  font-family: "Lucida Sans";
-  font-size: 10vh;
-  font-style: oblique;
-  color: deepskyblue;
-  padding: 5vh 0vh 5vh 0vh;
-}
-.pop {
-  color: deepskyblue;
-}
-.page-nav {
-  text-align: center;
-  width: 100%;
-  top: 0;
-  background-color: black;
-}
-
-a:hover {
-  background-color: deepskyblue;
-  color: black;
-  font-weight: bold;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
+  color: var(--strong);
+  text-decoration: underline;
+  text-decoration-color: #444;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+ul {
+  list-style: none;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.terminal {
+  color: var(--prompt);
+}
+
+.wrap {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navigation */
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+.page-nav ul {
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.page-nav a {
+  color: var(--muted);
+  font-size: 0.875rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.right-align {
-  float: right;
+.page-nav a:hover {
+  color: var(--strong);
 }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.center-text {
+/* Hero */
+.hero {
+  padding: 0 0 1rem;
   text-align: center;
 }
 
-.half-size {
-  width: 50%;
+/* Name and title fill the first screen; stack and location sit at its bottom edge */
+.hero-intro {
+  min-height: calc(100vh - 60px);
+  min-height: calc(100svh - 60px);
+  display: flex;
+  flex-direction: column;
 }
 
-.three-quarter-size{
-  width: 75%;
+.hero-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.pad-top {
-  padding-top: 5vh;
+.hero-bottom {
+  padding-bottom: 2rem;
 }
 
-.pad-top-large {
-  padding-top: 25vh;
+.hero-bottom .hero-tagline {
+  margin-top: 0;
 }
 
-.pad-top-xlarge {
-  padding-top: 30vh;
+.name {
+  color: var(--accent);
+  font-size: clamp(2.2rem, 7vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
-.pad-bottom {
-  padding-bottom: 5vh;
+.hero-title {
+  margin-top: 0.5rem;
+  color: var(--strong);
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
 }
 
-.pad-bottom-medium {
-  padding-bottom: 15vh;
+.hero-tagline {
+  margin-top: 1.1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-.pad-bottom-large {
-  padding-bottom: 35vh;
+.hero-sep {
+  color: var(--muted);
+  margin: 0 0.4rem;
 }
 
-table thead td {
-  padding: 0vh 5vh 0vh 5vh;
+.hero-break {
+  display: none;
 }
 
-/* Ensure tables don't overflow viewport */
-table {
-  max-width: 100%;
-  table-layout: auto;
+.hero-location {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
 }
 
-footer {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  bottom: 0;
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  padding-top: 10vh;
-  padding-bottom: 5vh;
-  background-color: black;
-  border-top: 1px solid #333;
+  margin-top: 1.6rem;
 }
 
-footer table {
+.icon-link {
+  display: inline-flex;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.icon-link svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-link:hover {
+  color: var(--accent);
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem 2rem;
+  margin-top: 2.75rem;
+  text-align: center;
+}
+
+.highlights > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlights dt {
+  color: var(--strong);
+  font-family: var(--mono);
+  font-size: 1.35rem;
+}
+
+.highlights dd {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Sections */
+.section {
+  padding-top: 4.5rem;
+}
+
+.section-title {
+  margin-bottom: 1.75rem;
+  color: var(--strong);
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.prose p + p {
+  margin-top: 1.1rem;
+}
+
+h3 {
+  color: var(--strong);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.row > span {
+  flex-shrink: 0;
+}
+
+.entry + .entry {
+  margin-top: 2.75rem;
+}
+
+.lead {
+  margin: 1rem 0 0.5rem;
+}
+
+/* Collapsible experience groups */
+.group {
+  border-top: 1px solid var(--line);
+}
+
+.group:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.group summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  color: var(--strong);
+  font-size: 0.925rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.group summary::-webkit-details-marker {
+  display: none;
+}
+
+.group summary::after {
+  content: "+";
+  margin-left: 0.75rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.group[open] summary::after {
+  content: "-";
+}
+
+.group summary:hover {
+  color: var(--accent);
+}
+
+.count {
   margin-left: auto;
-  margin-right: auto;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
 }
 
-/* Footer contact links specific styling */
-footer .contact-links {
-  width: auto;
-  margin: 0 auto;
+.group .bullets {
+  padding-bottom: 1rem;
 }
 
-footer .contact-links thead tr td {
-  padding: 1rem 2vh;
+/* Bullets */
+.bullets {
+  display: grid;
+  gap: 0.5rem;
 }
 
-footer svg {
-  width: 32px;
-  height: 32px;
-}
-.float-top {
-  vertical-align: top;
+.entry > .bullets {
+  margin-top: 1rem;
 }
 
-/* Mobile-responsive styles */
-@media (max-width: 768px) {
-  /* Override default table padding for all tables on mobile */
-  table thead td {
-    padding: 0.5rem clamp(0.3rem, 2vw, 1rem) !important;
+.bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+/* Projects */
+.project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name links"
+    "tech tech"
+    "text text";
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.project-name {
+  grid-area: name;
+}
+
+.project-links {
+  grid-area: links;
+  display: flex;
+  gap: 1rem;
+}
+
+.project-tech {
+  grid-area: tech;
+}
+
+.project-text {
+  grid-area: text;
+  margin-top: 0.5rem;
+}
+
+/* Role header (experience and education) */
+.role {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title dates"
+    "org place";
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.role-title {
+  grid-area: title;
+}
+
+.role-dates {
+  grid-area: dates;
+  text-align: right;
+}
+
+.role-org {
+  grid-area: org;
+}
+
+.role-place {
+  grid-area: place;
+  text-align: right;
+}
+
+/* Skills */
+.skills {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1rem;
+}
+
+.skills dt {
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+/* Footer */
+footer.wrap {
+  margin-top: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+footer .links {
+  margin-top: 0;
+}
+
+.footer-note {
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+}
+
+/* Phone */
+@media (max-width: 560px) {
+  .wrap,
+  .page-nav ul {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
   }
 
-  /* Contact links specific styling */
-  .contact-links {
-    width: 100% !important;
-    max-width: 100vw !important;
-    display: block !important;
-    overflow-x: hidden !important;
+  .hero {
+    padding-top: 0;
   }
 
-  .contact-links thead {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
+  .hero-sep {
+    display: none;
   }
 
-  .contact-links thead tr {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: clamp(0.5rem, 3vw, 1.5rem) !important;
-    width: 100% !important;
+  .hero-break {
+    display: inline;
   }
 
-  .contact-links thead tr td {
-    display: inline-flex !important;
-    padding: 0.5rem clamp(0.3rem, 2vw, 1rem) !important;
+  .section {
+    padding-top: 3.5rem;
   }
 
-  .contact-links svg {
-    width: clamp(28px, 7vw, 32px) !important;
-    height: clamp(28px, 7vw, 32px) !important;
+  .row {
+    flex-direction: column;
+    gap: 0;
   }
 
-  /* Footer responsive styles */
-  footer {
-    padding-top: 5vh;
-    padding-bottom: 3vh;
+  /* Phone order: title, org, then dates and place on one line */
+  .role {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "title title"
+      "org org"
+      "dates place";
+    column-gap: 0;
   }
 
-  footer .contact-links thead tr {
-    gap: clamp(0.5rem, 3vw, 1.5rem) !important;
-  }
-
-  footer .contact-links thead tr td {
-    padding: 0.5rem clamp(0.3rem, 2vw, 1rem) !important;
-  }
-
-  footer svg {
-    width: clamp(28px, 7vw, 32px) !important;
-    height: clamp(28px, 7vw, 32px) !important;
-  }
-
-  /* Adjust text sizes for better mobile readability */
-  .name {
-    font-size: 8vw; /* Changed from 10vh to responsive width-based */
-    padding: 2rem 1rem; /* Changed from 5vh to rem units */
-  }
-
-  .title {
-    font-size: 6vw; /* Changed from 5vh to responsive width-based */
-  }
-
-  .text-large {
-    font-size: 5vw; /* Changed from 4vh to responsive width-based */
-  }
-
-  .text-medium {
-    font-size: 4.5vw; /* Changed from 3vh to responsive width-based */
-  }
-
-  /* Reduce excessive padding on mobile */
-  .pad-top-xlarge {
-    padding-top: 10vh; /* Reduced from 30vh */
-  }
-
-  .pad-top-large {
-    padding-top: 8vh; /* Reduced from 25vh */
-  }
-
-  .pad-top {
-    padding-top: 2vh; /* Reduced from 5vh */
-  }
-
-  .pad-bottom-large {
-    padding-bottom: 10vh; /* Reduced from 35vh */
-  }
-
-  .pad-bottom-medium {
-    padding-bottom: 8vh; /* Reduced from 15vh */
-  }
-
-  .pad-bottom {
-    padding-bottom: 2vh; /* Reduced from 5vh */
-  }
-
-  /* Make navigation more mobile-friendly */
-  .page-nav table {
-    width: 100%;
-  }
-
-  .page-nav thead {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .page-nav thead td {
-    padding: 0.5rem clamp(0.5rem, 2vw, 1rem); /* Responsive horizontal padding */
-    flex-shrink: 1;
-  }
-
-  /* Ensure navigation links scale with viewport */
-  .page-nav a {
-    white-space: nowrap;
-    display: inline-block;
-    font-size: clamp(2.5vh, 3.5vw, 4vh); /* Scale text to prevent overflow */
-  }
-
-  /* Mobile-specific About section styles */
-  .about-section {
-    padding: 2vh 3vw; /* Reduced horizontal padding for mobile */
-  }
-
-  .section-content {
-    max-width: 100%; /* Full width on mobile */
-    width: 100%;
-  }
-
-  /* Keep ContactMe and Footer links horizontal but allow wrapping */
-  .pad-top-large.pad-bottom-medium,
-  footer {
-    display: block;
-    width: 100%;
-    overflow: hidden; /* Prevent horizontal scroll */
-  }
-
-  .pad-top-large.pad-bottom-medium table,
-  footer table {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pad-top-large.pad-bottom-medium table thead,
-  footer table thead {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: clamp(0.5rem, 2vw, 1rem) !important;
-    width: 100%;
-  }
-
-  .pad-top-large.pad-bottom-medium table thead tr,
-  footer table thead tr {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: clamp(0.5rem, 2vw, 1rem) !important;
-  }
-
-  .pad-top-large.pad-bottom-medium table thead tr td,
-  footer table thead tr td {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0.5rem clamp(0.5rem, 1vw, 1rem) !important;
-    min-width: fit-content !important;
-  }
-
-  /* Scale SVG icons on mobile */
-  .pad-top-large.pad-bottom-medium svg,
-  footer svg {
-    width: clamp(24px, 8vw, 32px);
-    height: clamp(24px, 8vw, 32px);
-    flex-shrink: 0;
-  }
-
-  /* Adjust widths for mobile */
-  .half-size {
-    width: 90%;
-  }
-
-  .three-quarter-size {
-    width: 95%;
-  }
-
-  /* Remove float on mobile as it breaks layout */
-  .right-align {
-    float: none;
+  .role-dates,
+  .role-place {
     text-align: left;
   }
 
-  /* Ensure nowrap doesn't cause overflow on mobile */
-  .nowrap {
-    white-space: normal;
+  .role-place::before {
+    content: "·";
+    margin: 0 0.45rem;
   }
 
-  /* Ensure links can wrap on mobile */
-  a {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  .role-place:empty {
+    display: none;
   }
 
-  /* Prevent lists from overflowing */
-  ul {
-    padding-left: 1.5rem;
-    padding-right: 0.5rem;
+  /* Phone order: name, tech, text, then links */
+  .project {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "tech"
+      "text"
+      "links";
   }
 
-  ul li {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  .project-links {
+    margin-top: 0.6rem;
   }
 
-  /* Adjust tab indent for smaller screens */
-  .tab {
-    text-indent: 2rem; /* Reduced from 5vh */
+  /* Three stats stay on one row */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 
-  /* Make footer more compact on mobile */
-  footer {
-    padding-top: 5vh; /* Reduced from 10vh */
+  .highlights dt {
+    font-size: 1.1rem;
   }
 
-  footer table thead tr td {
-    padding: 0 1rem; /* Add some spacing between icons */
+  .highlights dd {
+    font-size: 0.75rem;
+    line-height: 1.35;
   }
 
-  /* Adjust contact icons table for mobile */
-  .pad-top-large.pad-bottom-medium {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-  }
-}
-
-/* Extra small screens (narrow phones) */
-@media (max-width: 480px) {
-  /* Contact links - even tighter spacing */
-  .contact-links thead tr {
-    gap: clamp(0.25rem, 2vw, 0.75rem) !important;
-  }
-
-  .contact-links thead tr td {
-    padding: 0.25rem clamp(0.2rem, 1vw, 0.5rem) !important;
-  }
-
-  .contact-links svg {
-    width: clamp(24px, 8vw, 28px) !important;
-    height: clamp(24px, 8vw, 28px) !important;
-  }
-
-  /* Footer extra small screen styles */
-  footer .contact-links thead tr {
-    gap: clamp(0.25rem, 2vw, 0.75rem) !important;
-  }
-
-  footer .contact-links thead tr td {
-    padding: 0.25rem clamp(0.2rem, 1vw, 0.5rem) !important;
-  }
-
-  footer svg {
-    width: clamp(24px, 8vw, 28px) !important;
-    height: clamp(24px, 8vw, 28px) !important;
-  }
-
-  /* Further reduce text sizes for very small screens */
-  .name {
-    font-size: 9vw;
-    padding: 1.5rem 0.5rem;
-  }
-
-  .title {
-    font-size: 7vw;
-  }
-
-  .text-large {
-    font-size: 5.5vw;
-  }
-
-  .text-medium {
-    font-size: 5vw;
-  }
-
-  /* Keep navigation horizontal but with tighter spacing */
-  .page-nav thead td {
-    padding: 0.4rem clamp(0.3rem, 1.5vw, 0.8rem);
+  .page-nav ul {
+    gap: 0.75rem;
   }
 
   .page-nav a {
-    font-size: clamp(2vh, 4vw, 3.5vh); /* Smaller text for very small screens */
+    font-size: 0.8rem;
   }
 
-  /* Ensure contact icons don't overflow on smallest screens */
-  .pad-top-large.pad-bottom-medium table thead tr {
-    gap: clamp(0.25rem, 1vw, 0.5rem) !important;
+  .section-title {
+    margin-bottom: 1.25rem;
   }
 
-  .pad-top-large.pad-bottom-medium table thead tr td {
-    padding: 0.25rem clamp(0.25rem, 0.5vw, 0.5rem) !important;
+  .entry + .entry {
+    margin-top: 2.25rem;
   }
 
-  /* Smaller icons for very small screens */
-  .pad-top-large.pad-bottom-medium svg,
-  footer svg {
-    width: clamp(20px, 9vw, 28px);
-    height: clamp(20px, 9vw, 28px);
+  .skills > div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* Edge line drawings (desktop only) */
+.edge-art {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .edge-art {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
   }
 
-  /* Reduce section padding */
-  .about-section {
-    padding: 1.5vh 2vw;
+  .edge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(260px, calc((100vw - var(--width)) / 2 - 48px));
+    display: flex;
+    align-items: center;
   }
 
-  /* Smaller tab indent */
-  .tab {
-    text-indent: 1rem;
+  .edge svg {
+    width: 100%;
+    height: 92vh;
+  }
+
+  .edge-left {
+    left: 24px;
+  }
+
+  .edge-right {
+    right: 24px;
+    transform: scaleX(-1);
+  }
+
+  .edge-lines {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1;
+    opacity: 0.22;
+  }
+
+  .edge-ticks {
+    stroke-dasharray: 1 12;
+    stroke-width: 6;
+  }
+
+  .edge-pulse {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 24 900;
+    opacity: 0.7;
+    animation: edge-pulse 9s linear infinite;
+  }
+
+  .page-nav,
+  .wrap {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@keyframes edge-pulse {
+  from {
+    stroke-dashoffset: 924;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .edge-pulse {
+    animation: none;
+    opacity: 0;
   }
 }

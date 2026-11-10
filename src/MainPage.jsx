@@ -1,69 +1,79 @@
 import "./App.css";
 import About from "./About";
 import ContactMe from "./ContactMe";
-import Experience from "./Experience";
+import EdgeArt from "./EdgeArt";
+
+const navItems = [
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+];
+
+const highlights = [
+  { value: "500+", label: "test failures resolved" },
+  { value: "10+", label: "services modernized" },
+  { value: "30 min+", label: "saved each run with health checks" },
+];
 
 function MainPage() {
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 100; // Offset in pixels from top
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <>
-      <table className="page-nav center">
-        <thead>
-          <td>
-            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
-              About
-            </a>
-          </td>
-          <td>
-            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>
-              Experience
-            </a>
-          </td>
-          <td>
-            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}>
-              Education
-            </a>
-          </td>
-          <td>
-            <a className="text-large" href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
-              Projects
-            </a>
-          </td>
-        </thead>
-      </table>
+      <EdgeArt />
+      <nav className="page-nav" aria-label="Sections">
+        <ul>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      <section>
-        <section id="welcome">
-          {/* <p className="center-text pad-top title pad-top-large">
-            Hello!
-          </p> */}
-          <p className="center-text name pad-top-xlarge">Noah Kivett</p>
-          <p className="center-text title">Software Developer</p>
-          <br />
-        </section>
-        <section>
-          <table className="center">
-            <ContactMe />
-          </table>
-        </section>
+      <main className="wrap">
+        <header className="hero">
+          <div className="hero-intro">
+            <div className="hero-center">
+              <h1 className="name">Noah Kivett</h1>
+              <p className="hero-title">Software Engineer</p>
+            </div>
+            <div className="hero-bottom">
+              <p className="hero-tagline">
+                Java · Spring Boot · AWS · Kubernetes
+                <span className="hero-sep" aria-hidden="true"> | </span>
+                <br className="hero-break" />
+                OAuth2/OIDC Identity Platforms
+              </p>
+              <p className="hero-location">Littleton, CO</p>
+            </div>
+          </div>
+          <ContactMe />
 
-        <section id="about">
-          <About />
-        </section>
-      </section>
+          <dl className="highlights">
+            {highlights.map((h) => (
+              <div key={h.label}>
+                <dt>{h.value}</dt>
+                <dd>{h.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </header>
+
+        <About />
+      </main>
     </>
   );
 }
