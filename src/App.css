@@ -20,11 +20,11 @@
 }
 
 html {
-  /* The only type-scale lever: everything else here is sized in rem. 16px up to
-     ~1437px, ramping to a 22px cap at ~2557px. The cap keeps low-DPI ultrawides
-     from overshooting, since vw cannot see pixel density. Keep the bounds in rem
-     so a user's larger browser default scales the whole curve. */
-  font-size: clamp(1rem, 0.52rem + 0.535vw, 1.375rem);
+  /* The only type-scale lever: everything else here is sized in rem. 16px to
+     ~1024px, ramping to a 22px cap at 2560px. Anchored low because Retina Macs
+     report half their physical resolution (a 14" MBP is 1512 CSS px). Keep the
+     bounds in rem so a user's larger browser default scales the curve. */
+  font-size: clamp(1rem, 0.75rem + 0.39vw, 1.375rem);
   background: var(--bg);
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
@@ -347,63 +347,29 @@ h3 {
   background: var(--muted);
 }
 
+/* Same shape as .role: a .row plus plain paragraphs, not a named-area grid.
+   project-name and project-tech were never in the markup. */
 .project {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "name links"
-    "tech tech"
-    "text text";
-  column-gap: 1rem;
-  align-items: baseline;
-}
-
-.project-name {
-  grid-area: name;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-links {
-  grid-area: links;
   display: flex;
   gap: 1rem;
 }
 
-.project-tech {
-  grid-area: tech;
-}
-
 .project-text {
-  grid-area: text;
   margin-top: 0.5rem;
 }
 
-/* Role header (experience and education) */
+/* Role header (experience and education). Two stacked .row children, each doing
+   its own left/right split. Was a named-area grid, but no markup ever used the
+   role-title/dates/org/place classes, so both rows auto-placed into row 1 side
+   by side and overflowed into each other. */
 .role {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas:
-    "title dates"
-    "org place";
-  column-gap: 1rem;
-  align-items: baseline;
-}
-
-.role-title {
-  grid-area: title;
-}
-
-.role-dates {
-  grid-area: dates;
-  text-align: right;
-}
-
-.role-org {
-  grid-area: org;
-}
-
-.role-place {
-  grid-area: place;
-  text-align: right;
+  display: flex;
+  flex-direction: column;
 }
 
 .skills {
@@ -469,38 +435,6 @@ footer .links {
   .row {
     flex-direction: column;
     gap: 0;
-  }
-
-  .role {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "title title"
-      "org org"
-      "dates place";
-    column-gap: 0;
-  }
-
-  .role-dates,
-  .role-place {
-    text-align: left;
-  }
-
-  .role-place::before {
-    content: "·";
-    margin: 0 0.45rem;
-  }
-
-  .role-place:empty {
-    display: none;
-  }
-
-  .project {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "name"
-      "tech"
-      "text"
-      "links";
   }
 
   .project-links {
