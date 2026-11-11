@@ -72,15 +72,6 @@ const projects = [
     text: "My portfolio site, self-hosted on a Raspberry Pi. I moved it from PHP to React and Vite and got load times under a second. I handle the DNS, Apache config, SSL certs and uptime monitoring myself on the Pi, with secure tunneling for lightweight edge hosting.",
   },
   {
-    name: "Pico-8 Game Prototypes",
-    tech: "Lua · Pico-8 · Godot",
-    links: [
-      { label: "Repo", href: "https://github.com/nkiv/pico-8-projects" },
-      { label: "Play on itch.io", href: "https://nkiv.itch.io/" },
-    ],
-    text: "Quick game prototypes on a fantasy console with hard limits: 128x128 pixels and 8,192 tokens of Lua. I focus on tight gameplay loops and finding creative ways to work inside those limits.",
-  },
-  {
     name: "Biscuits from Outerspace",
     tech: "JavaScript · Phaser · Game jam #1681",
     links: [
