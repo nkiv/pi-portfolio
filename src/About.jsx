@@ -5,7 +5,7 @@ const charterGroups = [
     title: "Release Management",
     items: [
       "I own platform releases. I sequence rollouts across environments, make sure database migrations go out first, write the change records and release notes, keep the release calendar up to date, and run pre-prod deployments",
-      "Update leadership on release status daily",
+      "Update leadership on release status daily with up to 4 releases being packaged concurrently",
     ],
   },
   {
@@ -29,7 +29,6 @@ const charterGroups = [
     title: "Development",
     items: [
       "Moved legacy tests over to modern Spring Boot patterns",
-      "Wrote statistical distribution tests with a configurable tolerance",
       "Fixed a circuit breaker that could never open because a new one was created on every request.",
       "Modernized 10+ services: Java 11 to 21, Spring Boot 2.7 to 3.x, and Spring Data for Cassandra and reactive Redis",
     ],
@@ -185,17 +184,17 @@ function About() {
             than a hundred components shipped together on a shared release.
           </p>
           <p>
-            I work on the whole lifecycle. I dig into pre-production issues with
-            tracing and logging tools, design and build new service features,
-            and ship them through CI/CD to Kubernetes. I own platform releases
-            and the regression suite that decides when code is ready to merge.
+            I dig into pre-production issues with tracing and logging tools,
+            design and build new service features, and ship them through CI/CD
+            to Kubernetes. I own platform releases and the regression suite that
+            decides when code is ready to merge.
           </p>
           <p>
-            How I work: I understand a system before I change it, I use AI to
-            ask my dumbest questions, and I learn through failing. When
-            something goes wrong I think of every way I could fix it and plan
-            out the fix before I change anything. I'm careful with every action
-            I take so as few failures as possible are created.
+            I understand a system before I change it, I use AI to ask my
+            dumbest questions, and I learn through failing. When something goes
+            wrong I think of every way I could fix it and plan out the fix
+            before I change anything. I'm careful with every action I take so as
+            few failures as possible are created.
           </p>
           <p>
             AI is a big part of how I work faster. I turned the tasks I repeat

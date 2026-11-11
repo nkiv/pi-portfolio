@@ -14,7 +14,7 @@ const navItems = [
 const highlights = [
   { value: "500+", label: "test failures resolved" },
   { value: "10+", label: "services modernized" },
-  { value: "30 min+", label: "saved each run with health checks" },
+  { value: "345+", label: "regression runs triaged" },
 ];
 
 function MainPage() {
